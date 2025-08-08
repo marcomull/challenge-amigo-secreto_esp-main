@@ -19,8 +19,15 @@ function obtenerNombreAmigo() {
 }
 
 function agregarAmigoLista(nombre) {
-    listaAmigos.push(nombre);
-    alert("Ingreso el nombre del amigo: " + nombre);
+    if (existeAmigo(nombre)) {
+        alert("Ya existe el nombre del amigo: " + nombre);
+    } else {
+        listaAmigos.push(nombre);
+        alert("Ingreso el nombre del amigo: " + nombre);
+    }
 }
 
+function existeAmigo(nombre) {
+    return listaAmigos.includes(nombre);
+}
 
